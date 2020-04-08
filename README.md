@@ -1,2 +1,2 @@
 # Code
-Um local para armazenar códigos diversos
+Um Repositório criado para armazenar códigos diversos
