@@ -1,24 +1,12 @@
-//	Remove acentuação e procura a opção no dropdown
-const termo = removeSpecialCharSimple('termo de busca');
-let elemento = document.getElementById('id do elemento');
-function removeSpecialCharSimple(strToReplace) {
-strSChar = "áàãâäéèêëíìîïóòõôöúùûüçÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÖÔÚÙÛÜÇ";
-strNoSChars = "aaaaaeeeeiiiiooooouuuucAAAAAEEEEIIIIOOOOOUUUUC";
-var newStr = "";
-for (var i = 0; i < strToReplace.length; i++) {
-    if (strSChar.indexOf(strToReplace.charAt(i)) != -1) {
-        newStr += strNoSChars.substr(strSChar.search(strToReplace.substr(i, 1)), 1);
-    } else {
-        newStr += strToReplace.substr(i, 1);
-    }
-}
+var termo = "TERMO DE BUSCA";
+var elemento = document.querySelector("SELETOR DO ELEMENTO");
 
-return newStr.replace(/[^a-zA-Z 0-9]/g, '');
-}
-//#custasIniciaisProcessoForm\:listaBairros
-for (i=1;i<elemento.options.length;i++){
-     if (removeSpecialCharSimple(elemento.options[i].text).toUpperCase().includes(termo.toUpperCase())){
-        return i;
-        break;
-    } 
+
+for (i=1;i<elemento.options.length;i++)
+{
+ 	if (elemento.options[i].text.toUpperCase().includes(termo.toUpperCase()))
+ 	{
+	    elemento.selectedIndex=i;
+	    break;
+	} 
 }
